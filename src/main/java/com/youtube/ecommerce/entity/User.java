@@ -1,4 +1,4 @@
-package com.youtube.jwt.entity;
+package com.youtube.ecommerce.entity;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -11,7 +11,7 @@ public class User {
     private String userFirstName;
     private String userLastName;
     private String userPassword;
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "USER_ROLE",
             joinColumns = {
                     @JoinColumn(name = "USER_ID")
